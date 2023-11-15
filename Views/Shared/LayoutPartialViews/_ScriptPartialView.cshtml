@@ -1,0 +1,78 @@
+﻿<script src="~/oakberry-main/preview.colorlib.com/theme/oakberry/js/bootstrap.bundle.min.js"></script>
+<script src="~/oakberry-main/preview.colorlib.com/theme/oakberry/js/tiny-slider.js"></script>
+<script src="~/oakberry-main/preview.colorlib.com/theme/oakberry/js/glightbox.min.js%2baos.js%2bgoogle-map.js%2bmain.js.pagespeed.jc.Ed1LceD4Zh.js"></script>
+<script>eval(mod_pagespeed_rdWE5e7ZHS);</script>
+<script>eval(mod_pagespeed_TbXghfTMVh);</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&amp;sensor=false"></script>
+<script>eval(mod_pagespeed_Jq3FPUXGcI);</script>
+<script>eval(mod_pagespeed_F7TkqtYUhP);</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag() { dataLayer.push(arguments); }
+	gtag('js', new Date());
+
+	gtag('config', 'UA-23581568-13');
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"762ef5115d348ec2","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2022.10.3","si":100}' crossorigin="anonymous"></script>
+<script nonce="ee5dee11-6e2f-4adf-a428-c5042b8369f7">
+    (function (w, d) {
+        !function (Z, _, ba, bb) {
+            Z.zarazData = Z.zarazData || {};
+            Z.zarazData.executed = [];
+            Z.zaraz = { deferred: [], listeners: [] };
+            Z.zaraz.q = [];
+            Z.zaraz._f = function (bc) {
+                return function () {
+                    var bd = Array.prototype.slice.call(arguments);
+                    Z.zaraz.q.push({ m: bc, a: bd });
+                };
+            };
+
+            for (const be of ["track", "set", "debug"])
+                Z.zaraz[be] = Z.zaraz._f(be);
+
+            Z.zaraz.init = () => {
+                var bf = _.getElementsByTagName(bb)[0],
+                    bg = _.createElement(bb),
+                    bh = _.getElementsByTagName("title")[0];
+
+                bh && (Z.zarazData.t = _.getElementsByTagName("title")[0].text);
+                Z.zarazData.x = Math.random();
+                Z.zarazData.w = Z.screen.width;
+                Z.zarazData.h = Z.screen.height;
+                Z.zarazData.j = Z.innerHeight;
+                Z.zarazData.e = Z.innerWidth;
+                Z.zarazData.l = Z.location.href;
+                Z.zarazData.r = _.referrer;
+                Z.zarazData.k = Z.screen.colorDepth;
+                Z.zarazData.n = _.characterSet;
+                Z.zarazData.o = new Date().getTimezoneOffset();
+                Z.zarazData.q = [];
+
+                for (; Z.zaraz.q.length;) {
+                    const bl = Z.zaraz.q.shift();
+                    Z.zarazData.q.push(bl);
+                }
+
+                bg.defer = true;
+
+                for (const bm of [localStorage, sessionStorage])
+                    Object.keys(bm || {}).filter((bo) => bo.startsWith("_zaraz_")).forEach((bn) => {
+                        try {
+                            Z.zarazData["z_" + bn.slice(7)] = JSON.parse(bm.getItem(bn));
+                        } catch {
+                            Z.zarazData["z_" + bn.slice(7)] = bm.getItem(bn);
+                        }
+                    });
+
+                bg.referrerPolicy = "origin";
+                bg.src = "/oakberry-main/preview.colorlib.com/cdn-cgi/zaraz/sd0d9.js?z=" + btoa(encodeURIComponent(JSON.stringify(Z.zarazData)));
+                bf.parentNode.insertBefore(bg, bf);
+            };
+
+            ["complete", "interactive"].includes(_.readyState) ? Z.zaraz.init() : Z.addEventListener("DOMContentLoaded", Z.zaraz.init);
+        }(w, d, 0, "script");
+    })(window, document);
+</script>
