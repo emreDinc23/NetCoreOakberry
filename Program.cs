@@ -1,9 +1,21 @@
+using Microsoft.EntityFrameworkCore;
+using NetCoreOakberry.EntityFramework;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddDbContext<AppDbContext>(options =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("Default");
+    options.UseSqlServer(connectionString);
+});
 var app = builder.Build();
+using var scope = app.Services.CreateScope();
+var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+dbContext.Database.EnsureDeleted();
+dbContext.Database.EnsureCreated();
+DbSeeder.SeedAll(dbContext);
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
