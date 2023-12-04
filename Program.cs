@@ -12,6 +12,14 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+else
+{
+    using var scope = app.Services.CreateScope();
+    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    dbContext.Database.EnsureDeleted();
+    dbContext.Database.EnsureCreated();
+    DbSeeder.SeedAll(dbContext);
+}
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
