@@ -1,4 +1,5 @@
-﻿<section class="ftco-section ftco-no-pb ftco-no-pt">
+﻿
+<section class="ftco-section ftco-no-pb ftco-no-pt">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -10,31 +11,29 @@
                                 <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Rent Properties</a>
                             </div>
                         </div>
+
                         <div class="col-md-12 tab-wrap">
                             <div class="tab-content" id="v-pills-tabContent">
                                 <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
-                                    <form action="#" class="search-property-1">
+                                    <form method="post" asp-controller="Property" asp-action="Search" class="search-property-1">
                                         <div class="row g-0">
                                             <div class="col-md d-flex">
                                                 <div class="form-group p-4 border-0">
                                                     <label for="#">Enter Keyword</label>
                                                     <div class="form-field">
                                                         <div class="icon"><span class="fa fa-search"></span></div>
-                                                        <input type="text" class="form-control" placeholder="Enter Keyword">
+                                                        <input name="propertyName" type="text" class="form-control" placeholder="Enter Keyword">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-md d-flex">
                                                 <div class="form-group p-4">
-                                                    <label for="#">Property Type</label>
+                                                    <label name="propertyType" for="#">Property Type</label>
                                                     <div class="form-field">
                                                         <div class="select-wrap">
                                                             <div class="icon"><span class="fa fa-chevron-down"></span></div>
-                                                            <select name="" id="" class="form-control">
-                                                                <option value="">Residential</option>
-                                                                <option value="">Commercial</option>
-                                                                <option value="">Land</option>
-                                                                <option value="">Industrial</option>
+                                                            <select name="propertyType" id="select1" asp-items="Model.CategoriesDd" class="form-control">
+                                                                <option selected>All</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -45,7 +44,7 @@
                                                     <label for="#">Location</label>
                                                     <div class="form-field">
                                                         <div class="icon"><span class="ion-ios-pin"></span></div>
-                                                        <input type="text" class="form-control" placeholder="Search Location">
+                                                        <input name="location" type="text" class="form-control" placeholder="Search Location">
                                                     </div>
                                                 </div>
                                             </div>
@@ -55,21 +54,21 @@
                                                     <div class="form-field">
                                                         <div class="select-wrap">
                                                             <div class="icon"><span class="fa fa-chevron-down"></span></div>
-                                                            <select name="" id="" class="form-control">
-                                                                <option value="">$100</option>
-                                                                <option value="">$10,000</option>
-                                                                <option value="">$50,000</option>
-                                                                <option value="">$100,000</option>
-                                                                <option value="">$200,000</option>
-                                                                <option value="">$300,000</option>
-                                                                <option value="">$400,000</option>
-                                                                <option value="">$500,000</option>
-                                                                <option value="">$600,000</option>
-                                                                <option value="">$700,000</option>
-                                                                <option value="">$800,000</option>
-                                                                <option value="">$900,000</option>
-                                                                <option value="">$1,000,000</option>
-                                                                <option value="">$2,000,000</option>
+                                                            <select name="priceLimit" id="" class="form-control">
+                                                                <option value="100">$100</option>
+                                                                <option value="10000">$10,000</option>
+                                                                <option value="50000">$50,000</option>
+                                                                <option value="100000">$100,000</option>
+                                                                <option value="200000">$200,000</option>
+                                                                <option value="300000">$300,000</option>
+                                                                <option value="400000">$400,000</option>
+                                                                <option value="500000">$500,000</option>
+                                                                <option value="600000">$600,000</option>
+                                                                <option value="700000">$700,000</option>
+                                                                <option value="800000">$800,000</option>
+                                                                <option value="900000">$900,000</option>
+                                                                <option value="1000000">$1,000,000</option>
+                                                                <option value="2000000">$2,000,000</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -85,6 +84,23 @@
                                         </div>
                                     </form>
                                 </div>
+
+                                @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+                                {
+                                    <div style="background-color:#F2FFE9;color:#45474B;" class="alert alert-warning alert-dismissible fade show d-flex justify-content-between align-items-center" role="alert">
+                                        <strong style="color:#45474B">Nasıl Olur!</strong> @ViewBag.ErrorMessage
+                                        <small>şşş.. hadi beraber aramaya devam edelim..</small>
+                                        <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close" style="background-color:#F2FFE9; border:none;">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+
+                                    </div>
+
+                                }
+
+
+
+
                                 <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-performance-tab">
                                     <form action="#" class="search-property-1">
                                         <div class="row g-0">

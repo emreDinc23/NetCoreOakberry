@@ -4,7 +4,7 @@
             <div class="col-md-6 col-lg">
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2 logo d-flex">
-                        <a class="navbar-brand align-items-center" href="index-2.html">
+                        <a class="navbar-brand align-items-center" asp-controller="Home"asp-action="Index">
                             <span class="">Ahrar <small>Gayrimenkul</small></span>
                         </a>
                     </h2>
@@ -20,7 +20,7 @@
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2">Offers</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Properties</a></li>
+                        <li><a asp-controller="Properties"asp-action="Index"><span class="fa fa-chevron-right mr-2"></span>Properties</a></li>
                         <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Agents</a></li>
                         <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Locations</a></li>
                         <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Clients Support</a></li>
@@ -31,7 +31,7 @@
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2">Şirketimiz</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>AnaSayfa</a></li>
+                        <li><a asp-controller="Home" asp-action="Index"><span class="fa fa-chevron-right mr-2"></span>AnaSayfa</a></li>
                         <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Hakkımızda</a></li>
                         <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Blog</a></li>
                         <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>İletişime Geçin</a></li>
