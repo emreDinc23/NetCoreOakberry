@@ -1,15 +1,17 @@
-﻿<section class="slider-hero">
+﻿@model List<Slider>
+<section class="slider-hero">
     <div class="overlay"></div>
     <div class="hero-slider">
+        @foreach(var sliders in Model){
         <div class="item">
             <div class="work">
-                <div class="img d-flex align-items-center js-fullheight" style="background-image:url(/oakberry-main/preview.colorlib.com/theme/oakberry/images/xbg_1.jpg.pagespeed.ic.b31fPYrhFV.jpg)">
+                <div class="img d-flex align-items-center js-fullheight" style="background-image:url(@sliders.ImageUrl)">
                     <div class="container-xl">
                         <div class="row justify-content-center">
                             <div class="col-md-10 col-xl-6">
                                 <div class="text text-center" data-aos="fade-up" data-aos-duration="1000">
-                                    <h2>Your Property Is Our Priority</h2>
-                                    <p class="mb-5">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                                    <h2>@sliders.Title</h2>
+                                    <p class="mb-5">@sliders.Description</p>
                                     <p><a href="#" class="btn btn-primary px-5 py-3">Learn More <span class="ion ion-ios-arrow-round-forward"></span></a></p>
                                 </div>
                             </div>
@@ -18,7 +20,8 @@
                 </div>
             </div>
         </div>
-        <div class="item">
+        }
+       @*  <div class="item">
             <div class="work">
                 <div class="img d-flex align-items-center justify-content-center js-fullheight" style="background-image:url(/oakberry-main/preview.colorlib.com/theme/oakberry/images/xbg_2.jpg.pagespeed.ic.4lj8Kq4iRv.jpg)">
                     <div class="container-xl">
@@ -51,6 +54,6 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> *@
     </div>
 </section>
