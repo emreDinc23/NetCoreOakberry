@@ -1,0 +1,69 @@
+﻿@model List<Property>
+@{
+    int delay = 100;
+}
+<section class="hero-wrap hero-wrap-2" style="background-image:url(images/xbg_4.jpg.pagespeed.ic.wYQ9Oeghhn.jpg)">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 pt-5 text-center">
+                <p class="breadcrumbs"><span class="mr-2"><a href="index-2.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Properties <i class="fa fa-chevron-right"></i></span></p>
+                <h1 class="mb-0 bread">Properties</h1>
+            </div>
+        </div>
+    </div>
+</section>
+@await Component.InvokeAsync("SearchProperty")
+<section class="ftco-section bg-light">
+    <div class="container-xl">
+        <div class="row">
+            @foreach (var pr in Model)
+            {
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="@delay" data-aos-duration="1000">
+                    <div class="property-wrap">
+                        <a href="#" class="img img-property" style="background-image:url(@pr.PropertyImages.ImageUrl)">
+                            <p class="price"><span class="orig-price">$@pr.Price</span></p>
+                        </a>
+                        <div class="text">
+                            <div class="list-team d-flex align-items-center mb-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="img" style="background-image:url(@pr.Agent.ProfileImage)"></div>
+                                    <h3 class="ml-2">@pr.Agent.FirstName @pr.Agent.LastName</h3>
+                                </div>
+                                <span class="text-right">@pr.ConstructionDate (düzenlenecek)</span>
+                            </div>
+                            <h3><a href="#">@pr.Name</a></h3>
+                            <span class="location"><i class="ion-ios-pin"></i> @pr.City <span class="sale">@pr.PropertyCategory.Name</span></span>
+                            <ul class="property_list mt-3 mb-0">
+                                <li><span class="flaticon-bed"></span>3</li>
+                                <li><span class="flaticon-bathtub"></span>2</li>
+                                <li><span class="flaticon-blueprint"></span>1,878 sqft</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                delay = delay + 100;
+                if (delay == 400)
+                {
+                    delay = 100;
+                }
+            }
+
+        </div>
+        <div class="row mt-5">
+            <div class="col text-center">
+                <div class="block-27">
+                    <ul>
+                        <li><a href="#">&lt;</a></li>
+                        <li class="active"><span>1</span></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">&gt;</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

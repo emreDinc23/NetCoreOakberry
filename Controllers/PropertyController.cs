@@ -16,7 +16,13 @@ namespace NetCoreOakberry.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var properties = _context.Properties
+                .Include(e => e.PropertyImages)
+                .Include(b => b.PropertyCategory)
+                .Include(a => a.Agent)
+                .Take(8)
+                .ToList();
+            return View(properties);
         }
 
         public IActionResult Search(string propertyName, int propertyType, string location, int priceLimit)
