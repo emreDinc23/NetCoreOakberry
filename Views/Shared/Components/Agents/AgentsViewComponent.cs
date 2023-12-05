@@ -1,12 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using NetCoreOakberry.EntityFramework;
 
 namespace NetCoreOakberry.Views.Shared.Components.Agents
 {
     public class AgentsViewComponent : ViewComponent
     {
+        private readonly AppDbContext _context;
+
+        public AgentsViewComponent(AppDbContext context)
+        {
+            _context = context;
+        }
+
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            return View();
+            var agents = _context.Agents
+                .Take(4)
+                .Include(a => a.Properties)
+                .ToList();
+            return View(agents);
         }
     }
 }

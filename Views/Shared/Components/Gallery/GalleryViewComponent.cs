@@ -1,12 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using NetCoreOakberry.EntityFramework;
 
 namespace NetCoreOakberry.Views.Shared.Components.Gallery
 {
     public class GalleryViewComponent : ViewComponent
     {
+        private readonly AppDbContext _context;
+
+        public GalleryViewComponent(AppDbContext context)
+        {
+            _context = context;
+        }
+
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            return View();
+            var galleries = _context.PropertyImages.Take(6).ToList();
+
+            return View(galleries);
         }
     }
 }
