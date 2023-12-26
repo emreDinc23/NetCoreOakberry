@@ -5,7 +5,9 @@ VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreOakberry", "NetCoreOakberry.csproj", "{E739AEF6-6E18-48C7-8B73-358EE7918E05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreOakberry.EntityFramework", "..\NetCoreOakberry.EntityFramework\NetCoreOakberry.EntityFramework.csproj", "{CC3A3CA8-B1FF-499C-A821-9F1ACA16F207}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreOakberry.Persistence", "..\NetCoreOakberry.Persistence\NetCoreOakberry.Persistence.csproj", "{B3059929-B7B6-447F-9274-E662E368908D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreOakberry.Business", "..\NetCoreOakberry.Business\NetCoreOakberry.Business.csproj", "{766BA85B-5FEC-4593-83D2-7E16B9315B10}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +19,14 @@ Global
 		{E739AEF6-6E18-48C7-8B73-358EE7918E05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E739AEF6-6E18-48C7-8B73-358EE7918E05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E739AEF6-6E18-48C7-8B73-358EE7918E05}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CC3A3CA8-B1FF-499C-A821-9F1ACA16F207}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CC3A3CA8-B1FF-499C-A821-9F1ACA16F207}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CC3A3CA8-B1FF-499C-A821-9F1ACA16F207}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CC3A3CA8-B1FF-499C-A821-9F1ACA16F207}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3059929-B7B6-447F-9274-E662E368908D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3059929-B7B6-447F-9274-E662E368908D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3059929-B7B6-447F-9274-E662E368908D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3059929-B7B6-447F-9274-E662E368908D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{766BA85B-5FEC-4593-83D2-7E16B9315B10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{766BA85B-5FEC-4593-83D2-7E16B9315B10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{766BA85B-5FEC-4593-83D2-7E16B9315B10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{766BA85B-5FEC-4593-83D2-7E16B9315B10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

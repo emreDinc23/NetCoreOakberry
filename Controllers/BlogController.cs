@@ -2,23 +2,24 @@
 using Microsoft.EntityFrameworkCore;
 using NetCoreOakberry.Persistence;
 
-namespace NetCoreOakberry.Views.Shared.Components.Blog
+namespace NetCoreOakberry.Controllers
 {
-    public class BlogViewComponent : ViewComponent
+    public class BlogController : Controller
     {
         private readonly AppDbContext _context;
 
-        public BlogViewComponent(AppDbContext context)
+        public BlogController(AppDbContext context)
         {
             _context = context;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync()
+        public IActionResult Index()
         {
             var blogs = _context.Blogs
-                .Take(4)
                 .Include(e => e.Comments)
+                .Include(e => e.Tags)
                 .ToList();
+            ViewBag.BgImage = _context.BgImages.Where(e => e.Id == 2).Select(e => e.BackgroundImage).FirstOrDefault();
             return View(blogs);
         }
     }

@@ -1,0 +1,54 @@
+﻿@model List<Blog>
+@{
+    int delay = 100;
+}
+<section class="hero-wrap hero-wrap-2" style="background-image:url(@ViewBag.BgImage)">
+<div class="overlay"></div>
+<div class="container">
+<div class="row no-gutters slider-text align-items-center justify-content-center">
+<div class="col-md-9 pt-5 text-center">
+<p class="breadcrumbs"><span class="mr-2"><a asp-controller="Home" asp-action="Index">Home <i class="fa fa-chevron-right"></i></a></span> <span>Blog <i class="fa fa-chevron-right"></i></span></p>
+<h1 class="mb-0 bread">Our Blog</h1>
+</div>
+</div>
+</div>
+</section>
+<section class="ftco-section bg-light">
+<div class="container-xl">
+<div class="row">
+    @foreach(var bl in Model){
+<div class="col-md-3 d-flex">
+<div class="blog-entry justify-content-end" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="@delay">
+<a href="blog-single.html" class="block-20 img d-flex align-items-end" style="background-image:url(@bl.ImageUrl1)">
+</a>
+<div class="text">
+<p class="meta"><span>Admin</span> <span>Dec. 01, 2020</span><a href="#">@bl.Comments.Count</a></p>
+<h3 class="heading mb-3"><a href="#">@bl.Title1</a></h3>
+<p>@bl.Description1</p>
+</div>
+</div>
+                </div>
+                delay = delay + 100;
+                if (delay > 400)
+                {
+                    delay = 100;
+                }
+}
+</div>
+<div class="row mt-5">
+<div class="col text-center">
+<div class="block-27">
+<ul>
+<li><a href="#">&lt;</a></li>
+<li class="active"><span>1</span></li>
+<li><a href="#">2</a></li>
+<li><a href="#">3</a></li>
+<li><a href="#">4</a></li>
+<li><a href="#">5</a></li>
+<li><a href="#">&gt;</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>

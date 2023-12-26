@@ -1,16 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using NetCoreOakberry.EntityFramework;
-using NetCoreOakberry.Models;
+using NetCoreOakberry.Business.Services;
+using NetCoreOakberry.Persistence;
 
 namespace NetCoreOakberry.Controllers
 {
     public class AboutUsController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly AboutUsService _aboutUsService;
 
-        public AboutUsController(AppDbContext context)
+        public AboutUsController(AppDbContext context, AboutUsService aboutUsService)
         {
+            _aboutUsService = aboutUsService;
             _context = context;
         }
 

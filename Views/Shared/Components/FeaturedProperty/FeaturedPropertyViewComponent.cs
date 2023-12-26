@@ -1,7 +1,7 @@
 ﻿using Bogus.DataSets;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using NetCoreOakberry.EntityFramework;
+using NetCoreOakberry.Persistence;
 
 namespace NetCoreOakberry.Views.Shared.Components.FeaturedProperty
 {

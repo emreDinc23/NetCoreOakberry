@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using NetCoreOakberry.EntityFramework;
-using NetCoreOakberry.EntityFramework.Entities;
+using NetCoreOakberry.Persistence;
+
+using NetCoreOakberry.Persistence.Entities;
 
 namespace NetCoreOakberry.Views.Shared.Components.CategoriesPlaces
 {

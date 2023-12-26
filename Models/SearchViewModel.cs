@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
-using NetCoreOakberry.EntityFramework.Entities;
+using NetCoreOakberry.Persistence.Entities;
 
 namespace NetCoreOakberry.Models
 {
