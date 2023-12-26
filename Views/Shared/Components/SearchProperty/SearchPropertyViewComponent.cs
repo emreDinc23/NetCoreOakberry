@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using NetCoreOakberry.EntityFramework;
+using NetCoreOakberry.Persistence;
 using NetCoreOakberry.Models;
 
 namespace NetCoreOakberry.Views.Shared.Components.SearchProperty

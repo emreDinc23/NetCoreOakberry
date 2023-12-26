@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
-using NetCoreOakberry.EntityFramework;
+using NetCoreOakberry.Persistence;
 
 namespace NetCoreOakberry.Controllers
 {

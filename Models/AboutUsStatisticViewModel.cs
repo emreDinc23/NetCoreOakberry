@@ -1,4 +1,4 @@
-﻿using NetCoreOakberry.EntityFramework.Entities;
+﻿using NetCoreOakberry.Persistence.Entities;
 
 namespace NetCoreOakberry.Models
 {

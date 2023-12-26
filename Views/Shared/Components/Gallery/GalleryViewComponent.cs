@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using NetCoreOakberry.EntityFramework;
+using NetCoreOakberry.Persistence;
 
 namespace NetCoreOakberry.Views.Shared.Components.Gallery
 {

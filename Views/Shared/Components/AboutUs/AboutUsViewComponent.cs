@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using NetCoreOakberry.EntityFramework;
 using NetCoreOakberry.Models;
+using NetCoreOakberry.Persistence;
 
 namespace NetCoreOakberry.Views.Shared.Components.AboutUs
 {

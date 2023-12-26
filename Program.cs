@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using NetCoreOakberry.EntityFramework;
+using NetCoreOakberry.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
