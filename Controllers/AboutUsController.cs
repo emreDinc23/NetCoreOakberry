@@ -7,12 +7,12 @@ namespace NetCoreOakberry.Controllers
     public class AboutUsController : Controller
     {
         private readonly AppDbContext _context;
-        private readonly AboutUsService _aboutUsService;
+        private readonly IAboutUsService _aboutUs;
 
-        public AboutUsController(AppDbContext context, AboutUsService aboutUsService)
+        public AboutUsController(AppDbContext context, IAboutUsService aboutUs)
         {
-            _aboutUsService = aboutUsService;
             _context = context;
+            _aboutUs = aboutUs;
         }
 
         public IActionResult Index()
