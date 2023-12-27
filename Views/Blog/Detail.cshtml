@@ -1,0 +1,184 @@
+﻿@model Blog?
+<section class="ftco-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 blog-single">
+                <h2 class="mb-3">@Model.Title1</h2>
+                <p>@Model.Description1</p>
+                <p>
+                    <img src="@Model.ImageUrl1" alt="" class="img-fluid">
+                </p>
+                <p>@Model.Description2</p>
+                <h2 class="mb-3 mt-5">#2. @Model.Title2</h2>
+                <p>@Model.Description2</p>
+                <p>
+                    <img src="@Model.ImageUrl2" alt="" class="img-fluid">
+                </p>
+                <p>@Model.Description1</p>
+                <div class="tag-widget post-tag-container mb-5 mt-5">
+                    <div class="tagcloud">
+                        @foreach (var tag in Model.Tags)
+                        {
+                            <a href="#" class="tag-cloud-link">@tag.Title</a>
+                        }
+                    </div>
+                </div>
+
+                <div class="about-author d-flex p-4 bg-light rounded">
+                    <div class="bio mr-5">
+                        <img src="images/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg" alt="Image placeholder" class="img-fluid mb-4">
+                    </div>
+                    <div class="desc">
+                        <h3>George Washington</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
+                    </div>
+                </div>
+                <div class="pt-5 mt-5">
+                    <h3 class="mb-5" style="font-size: 28px; font-weight: bold;">6 Comments</h3>
+                    <ul class="comment-list">
+                        @foreach (var comment in Model.Comments)
+                        {
+                            <li class="comment">
+                                <div class="vcard bio">
+                                    <img src="deneme" alt="Image placeholder">
+                                </div>
+                                <div class="comment-body">
+                                    <h3>@comment.Name</h3>
+                                    <div class="meta">@comment.CreatedAt</div>
+                                    <p>@comment.Message</p>
+                                    <p><a href="#" class="reply">Reply</a></p>
+
+                                    <!-- Replies -->
+                                    @if (comment.Replies.Any())
+                                    {
+                                        <ul class="children">
+                                            @foreach (var reply in comment.Replies)
+                                            {
+                                                <li class="comment">
+                                                    <div class="vcard bio">
+                                                        <img src="@reply." alt="Image placeholder">
+                                                    </div>
+                                                    <div class="comment-body">
+                                                        <h3>@reply.Name</h3>
+                                                        <div class="meta">tarih</div>
+                                                        <p>@reply.Message</p>
+                                                        <p><a href="#" class="reply">Reply</a></p>
+                                                    </div>
+                                                </li>
+                                            }
+                                        </ul>
+                                    }
+                                </div>
+                            </li>
+                        }
+                    </ul>
+
+                    <div class="comment-form-wrap pt-5">
+                        <h3 class="mb-5" style="font-size: 28px; font-weight: bold;">Leave a comment</h3>
+                        <form action="#" class="p-4 p-lg-5 comment-form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="name">Name *</label>
+                                        <input type="text" class="form-control" id="name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="email">Email *</label>
+                                        <input type="email" class="form-control" id="email">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="website">Website</label>
+                                        <input type="url" class="form-control" id="website">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="message">Message</label>
+<textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 sidebar pl-md-4">
+                <div class="sidebar-box bg-light rounded">
+                    <form action="#" class="search-form">
+                        <div class="form-group">
+                            <span class="icon fa fa-search"></span>
+                            <input type="text" class="form-control" placeholder="Search...">
+                        </div>
+                    </form>
+                </div>
+                <div class="sidebar-box">
+                    <div class="categories">
+                        <h3>Property Type</h3>
+                        <li><a href="#">Land</a></li>
+                        <li><a href="#">Residential</a></li>
+                        <li><a href="#">Commercial</a></li>
+                        <li><a href="#">Industrial</a></li>
+                    </div>
+                </div>
+                <div class="sidebar-box">
+                    <h3>Recent Blog</h3>
+                    <div class="block-21 mb-4 d-flex">
+                        <a class="blog-img mr-4" style="background-image:url(images/ximage_1.jpg.pagespeed.ic.Yc6gAsaZ2Y.jpg)"></a>
+                        <div class="text">
+                            <h3 class="heading"><a href="#">Far far away, behind the word mountains</a></h3>
+                            <div class="meta">
+                                <div><a href="#"><span class="fa fa-calendar"></span> December 02, 2020</a></div>
+                                <div><a href="#"><span class="fa fa-user"></span> Admin</a></div>
+                                <div><a href="#"><span class="fa fa-comment"></span> 19</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-21 mb-4 d-flex">
+                        <a class="blog-img mr-4" style="background-image:url(images/ximage_2.jpg.pagespeed.ic.mQGyn1P_Li.jpg)"></a>
+                        <div class="text">
+                            <h3 class="heading"><a href="#">Far far away, behind the word mountains</a></h3>
+                            <div class="meta">
+                                <div><a href="#"><span class="fa fa-calendar"></span> December 02, 2020</a></div>
+                                <div><a href="#"><span class="fa fa-user"></span> Admin</a></div>
+                                <div><a href="#"><span class="fa fa-comment"></span> 19</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-21 mb-4 d-flex">
+                        <a class="blog-img mr-4" style="background-image:url(images/ximage_3.jpg.pagespeed.ic.CWHmT1gFhf.jpg)"></a>
+                        <div class="text">
+                            <h3 class="heading"><a href="#">Far far away, behind the word mountains</a></h3>
+                            <div class="meta">
+                                <div><a href="#"><span class="fa fa-calendar"></span> December 02, 2020</a></div>
+                                <div><a href="#"><span class="fa fa-user"></span> Admin</a></div>
+                                <div><a href="#"><span class="fa fa-comment"></span> 19</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-box">
+                    <h3>Tag Cloud</h3>
+                    <div class="tagcloud">
+                        @foreach (var tag in Model.Tags)
+                        {
+                            <a href="#" class="tag-cloud-link">@tag.Title</a>
+                        }
+                    </div>
+                </div>
+                <div class="sidebar-box">
+                    <h3>Paragraph</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 

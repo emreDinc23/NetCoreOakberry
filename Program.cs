@@ -1,10 +1,12 @@
 using Microsoft.EntityFrameworkCore;
+using NetCoreOakberry.Business.Services;
 using NetCoreOakberry.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IAboutUsService, AboutUsService>();
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
     var connectionString = builder.Configuration.GetConnectionString("Default");
